@@ -42,6 +42,7 @@ $filme = criaFilme(
     genero: Genero::SuperHeroi,
     anoLancamento: 2021,
     nome: "Thor: Ragnarok",
+    duracao: 180
 );
 
 echo $filme->anoLancamento;

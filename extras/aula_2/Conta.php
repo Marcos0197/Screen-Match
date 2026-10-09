@@ -3,34 +3,34 @@
 declare(strict_types=1);
 class Conta
 {
-    private int $saldoEmCentavos;
+    private int $saldoCentavos;
     private string $nomeTitular;
     private int $numeroConta;
 
-    public function depositar(int $valorADepositar): void
+    public function depositar(int $valorDeposito): void
     {
-        if ($valorADepositar <= 0) {
+        if ($valorDeposito <= 0) {
             throw new DomainException('Impossível realizar o depósito');
         }
 
-        if ($valorADepositar > 0) {
-            $this->saldoEmCentavos += $valorADepositar;
+        if ($valorDeposito > 0) {
+            $this->saldoCentavos += $valorDeposito;
         }
     }
 
-    public function sacar(int $valorASacar): void
+    public function sacar(int $valorSaque): void
     {
-        if ($valorASacar < 0 || $valorASacar >
-        $this->saldoEmCentavos) {
+        if ($valorSaque < 0 || $valorSaque >
+        $this->saldoCentavos) {
             throw new DomainException('Impossível realizar o saque');
         }
 
-        $this->saldoEmCentavos -= $valorASacar;
+        $this->saldoCentavos -= $valorSaque;
     }
 
-    public function getSaldoEmCentavos(): int
+    public function getSaldoCentavos(): int
     {
-        return $this->saldoEmCentavos;
+        return $this->saldoCentavos;
     }
 
     public function setNomeTitular(string $nomeTitular): void
