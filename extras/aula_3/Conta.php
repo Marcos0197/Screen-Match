@@ -1,11 +1,17 @@
 <?php
 
 declare(strict_types=1);
+
 class Conta
 {
     private int $saldoEmCentavos;
-    private string $nomeTitular;
-    private int $numeroConta;
+
+    public function __construct(
+        public readonly string $nomeTitular,
+        public readonly TipoConta $tipo,
+    ) {
+        $this->saldoEmCentavos = 0;
+    }
 
     public function depositar(int $valorADepositar): void
     {
@@ -26,30 +32,5 @@ class Conta
         }
 
         $this->saldoEmCentavos -= $valorASacar;
-    }
-
-    public function getSaldoEmCentavos(): int
-    {
-        return $this->saldoEmCentavos;
-    }
-
-    public function setNomeTitular(string $nomeTitular): void
-    {
-        $this->nomeTitular = $nomeTitular;
-    }
-
-    public function getNomeTitular(): string
-    {
-        return $this->nomeTitular;
-    }
-
-    public function setNumeroConta(int $numeroConta): void
-    {
-        $this->numeroConta = $numeroConta;
-    }
-
-    public function getNumeroConta(): int
-    {
-        return $this->numeroConta;
     }
 }
