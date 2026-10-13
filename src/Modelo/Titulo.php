@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-class Titulo {
+class Titulo
+{
     private array $notas;
 
     public function __construct(
         public readonly string $nome,
         public readonly int $anoLancamento,
         public readonly Genero $genero,
-    )
-    {
+    ) {
         $this->notas = [];
     }
 

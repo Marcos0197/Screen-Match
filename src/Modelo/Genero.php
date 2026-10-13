@@ -2,7 +2,8 @@
 
 declare(strict_types=1);
 
-enum Genero: string {
+enum Genero: string
+{
     case Acao = 'Ação';
     case Comedia = 'Comédia';
     case Terror = 'Terror';

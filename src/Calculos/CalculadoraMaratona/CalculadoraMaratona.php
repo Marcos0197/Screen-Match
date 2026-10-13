@@ -2,7 +2,8 @@
 
 declare(strict_types=1);
 
-class CalculadoraMaratona {
+class CalculadoraMaratona 
+{
     private int $duracaoMaratona = 0;
 
     public function inclui(Titulo $titulo): void

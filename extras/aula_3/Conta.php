@@ -19,15 +19,12 @@ class Conta
             throw new DomainException('Impossível realizar o depósito');
         }
 
-        if ($valorDeposito > 0) {
-            $this->saldoCentavos += $valorDeposito;
-        }
+        $this->saldoCentavos += $valorDeposito;
     }
 
     public function sacar(int $valorSaque): void
     {
-        if ($valorSaque < 0 || $valorSaque >
-        $this->saldoCentavos) {
+        if ($valorSaque < 0 || $valorSaque > $this->saldoCentavos) {
             throw new DomainException('Impossível realizar o saque');
         }
 

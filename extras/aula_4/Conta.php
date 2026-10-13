@@ -12,15 +12,12 @@ class ContaBancaria
             throw new DomainException('Impossível realizar o depósito');
         }
 
-        if ($valorDeposito > 0) {
-            $this->saldo += $valorDeposito;
-        }
+        $this->saldo += $valorDeposito;
     }
 
     public function sacar(int $valorSaque): void
     {
-        if ($valorSaque < 0 || $valorSaque >
-        $this->saldo) {
+        if ($valorSaque < 0 || $valorSaque > $this->saldo) {
             throw new DomainException('Impossível realizar o saque');
         }
 
@@ -50,8 +47,7 @@ class ContaCorrente extends ContaBancaria
     {
         $saqueTotal = $valorSaque + $valorSaque * self::TAXA_SAQUE;
 
-        if ($saqueTotal < 0 || $saqueTotal >
-        $this->saldo) {
+        if ($saqueTotal <= 0 || $saqueTotal > $this->saldo) {
             throw new DomainException('Impossível realizar o saque');
         }
 

@@ -2,7 +2,8 @@
 
 declare(strict_types=1);
 
-class Serie extends Titulo {
+class Serie extends Titulo
+{
     private array $notas;
 
     public function __construct(
